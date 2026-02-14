@@ -1,0 +1,16 @@
+{
+  "label": "Aruna",
+  "preview_path": "./templates/home-page.html",
+  "screenshot_path": "./images/templates/homepage.jpg",
+  "enable_domain_stylesheets": false,
+  "version": "1.0",
+  "author": {
+    "name": "Daniel",
+    "email": "noreply@hubspot.com",
+    "url": "https://theme-provider.com/"
+  },
+  "documentation_url": "https://theme-provider.com/cool-theme/documentation",
+  "license": "./license.txt",
+  "example_url": "https://theme-provider.com/cool-theme/demo",
+  "is_available_for_new_content": true
+}
