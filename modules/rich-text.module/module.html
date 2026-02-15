@@ -1,4 +1,27 @@
 {# module class name: rt #}
-<div class="debugdiv">
-{{ module.html }}
+
+{% set variables = content %}
+
+
+{# shorthand vars #}
+{% set module_id = 'rt' ~ name|replace('module_','')|replace('widget_','') %}
+
+{# module class list #}
+{% set module_classes = ['rt', 'widget-type-rich_text'] %} 
+  {% do module.classes.append(module.settings.custom_classes) if module.settings.custom_classes %}
+{% set module_classes = module_classes|join(' ') %}
+
+{# markup #}
+<div id="{{ module_id}}" class="{{ module_classes }}">
+  {{ module.html }}
 </div>
+
+{% require_css %}
+  <style>
+    {% scope_css %}
+      .rt {
+        
+      }
+    {% end_scope_css %}
+  </style>
+{% end_require_css %}

@@ -1,11 +1,63 @@
 [
   {
-    "default": "<h1>Hello, world!</h1>",
-    "label": "Rich text field",
-    "locked": false,
-    "name": "html",
+  "id" : "html",
+  "name" : "html",
+  "label" : "Rich text content",
+  "help_text" : "Want to manage text alignment or spacing? Go to the <b>styles</b> tab of this module.",
+  "inline_help_text" : "Scroll down for more options. 🙂",
+  "required" : false,
+  "locked" : false,
+  "enabled_features" : [ "emoji", "lists", "link", "standard_emphasis", "bold", "source_code", "advanced_emphasis", "colors" ],
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>This is your theme's richtext module! 🔥 <br><strong>It will animate however you tell it to.</strong> It is recommended to only use paragraphs and list elements here. 💯</p><p>If you want to get a checked list, then use the <strong><em>Fancy List</em></strong> or <strong><em>Icon List</em></strong> modules. For headings, use the <em><strong>Section Heading</strong></em> module.</p>"
+  }, {
+    "id": "settings",
+    "name": "settings",
+    "label": "Advanced settings",
     "required": false,
-    "type": "richtext",
-    "validation_regex": ""
+    "locked": false,
+    "children": [
+      {
+        "id": "custom_id",
+        "name": "custom_id",
+        "label": "Custom ID",
+        "help_text": "Name cannot start with a number. Only use valid css characters.",
+        "required": false,
+        "locked": false,
+        "validation_regex": "[a-z][\\w-]*",
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null
+      },
+      {
+        "id": "custom_classes",
+        "name": "custom_classes",
+        "label": "Custom classes",
+        "help_text": "You can have multiple class names. Names should not start with a number. Only use valid css characters.",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null
+      },{
+        "id" : "settings.custom_data_attributes",
+        "name" : "custom_attributes",
+        "label" : "Custom attributes",
+        "help_text" : "Must be a valid data attribute. Cannot end in a space or period. Google \"valid html data-attribute\" if you need help.",
+        "inline_help_text" : "⚠️❗ Advanced users only ❗⚠️",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "(\\s?data-(\\w*)=?((\")(.*?)(\"))?)+",
+        "placeholder" : "ex: data-foo=\"bar\" data-analytics-target",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null
+      } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
   }
 ]
