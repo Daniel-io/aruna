@@ -1,4 +1,4 @@
-[
+[ 
   {
   "id" : "html",
   "name" : "html",
@@ -11,53 +11,98 @@
   "type" : "richtext",
   "display_width" : null,
   "default" : "<p>This is your theme's richtext module! 🔥 <br><strong>It will animate however you tell it to.</strong> It is recommended to only use paragraphs and list elements here. 💯</p><p>If you want to get a checked list, then use the <strong><em>Fancy List</em></strong> or <strong><em>Icon List</em></strong> modules. For headings, use the <em><strong>Section Heading</strong></em> module.</p>"
-  }, {
-    "id": "settings",
-    "name": "settings",
-    "label": "Advanced settings",
-    "required": false,
-    "locked": false,
-    "children": [
-      {
-        "id": "custom_id",
-        "name": "custom_id",
-        "label": "Custom ID",
-        "help_text": "Name cannot start with a number. Only use valid css characters.",
-        "required": false,
-        "locked": false,
-        "validation_regex": "[a-z][\\w-]*",
-        "allow_new_line": false,
-        "type": "text",
-        "display_width": null
-      },
-      {
-        "id": "custom_classes",
-        "name": "custom_classes",
-        "label": "Custom classes",
-        "help_text": "You can have multiple class names. Names should not start with a number. Only use valid css characters.",
-        "required": false,
-        "locked": false,
-        "allow_new_line": false,
-        "type": "text",
-        "display_width": null
-      },{
-        "id" : "settings.custom_data_attributes",
-        "name" : "custom_attributes",
-        "label" : "Custom attributes",
-        "help_text" : "Must be a valid data attribute. Cannot end in a space or period. Google \"valid html data-attribute\" if you need help.",
-        "inline_help_text" : "⚠️❗ Advanced users only ❗⚠️",
-        "required" : false,
-        "locked" : false,
-        "validation_regex" : "(\\s?data-(\\w*)=?((\")(.*?)(\"))?)+",
-        "placeholder" : "ex: data-foo=\"bar\" data-analytics-target",
-        "allow_new_line" : false,
-        "type" : "text",
-        "display_width" : null
-      } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "group_occurrence_meta" : null,
-    "type" : "group",
+}, {
+  "id" : "animation",
+  "name" : "animation",
+  "label" : "Animation settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "animation.type",
+    "name" : "type",
+    "label" : "Animation type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "placeholder" : "None",
+    "choices" : [ [ "mh-animation--fadeIn", "Fade in" ], [ "mh-animation--fadeInUp", "Fade in up" ], [ "mh-animation--fadeInDown", "Fade in down" ], [ "mh-animation--fadeInRight", "Fade in right" ], [ "mh-animation--fadeInLeft", "Fade in left" ], [ "mh-animation--pulse", "Pulse" ], [ "mh-animation--headShake", "Headshake" ], [ "mh-animation--backInDown", "Back in down" ], [ "mh-animation--backInUp", "Back in up" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
     "display_width" : null
+  }, {
+    "id" : "animation.delay",
+    "name" : "delay",
+    "label" : "Animation delay",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "animation.type",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "slider",
+    "min" : 0,
+    "max" : 1500,
+    "step" : 100,
+    "suffix" : "ms",
+    "type" : "number",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null
+}, {
+  "id" : "settings",
+  "name" : "settings",
+  "label" : "Advanced settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "custom_id",
+    "name" : "custom_id",
+    "label" : "Custom ID",
+    "help_text" : "Name cannot not start with a number. Only use valid css characters.",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "[a-z][\\w-]*",
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "custom_classes",
+    "name" : "custom_classes",
+    "label" : "Custom classes",
+    "help_text" : "You can have multiple class names. Names should not start with a number. Only use valid css characters.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "settings.custom_data_attributes",
+    "name" : "custom_attributes",
+    "label" : "Custom attributes",
+    "help_text" : "Must be a valid data attribute. Cannot end in a space or period. Google \"valid html data-attribute\" if you need help.",
+    "inline_help_text" : "⚠️❗ Advanced users only ❗⚠️",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "(\\s?data-(\\w*)=?((\")(.*?)(\"))?)+",
+    "placeholder" : "ex: data-foo=\"bar\" data-analytics-target",
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null
   }
 ]

@@ -1,6 +1,10 @@
 {
   "label": "Rich Text (Simple)",
-  "css_assets": [],
+  "css_assets" : [ {
+    "autoload" : false,
+    "path" : "../../css/mh-animations.css",
+    "name" : "mh-animations.css"
+  } ],
   "external_js": [],
   "global": false,
   "help_text": "",

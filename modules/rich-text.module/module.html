@@ -1,9 +1,7 @@
 {# module class name: rt #}
 
-{% set variables = content %}
-
-
 {# shorthand vars #}
+{% set animation = module.animation  %}
 {% set module_id = 'rt' ~ name|replace('module_','')|replace('widget_','') %}
 
 {# module class list #}
@@ -12,15 +10,20 @@
 {% set module_classes = module_classes|join(' ') %}
 
 {# markup #}
-<div id="{{ module_id}}" class="{{ module_classes }}">
+<div id="{{ module_id }}" class="{{ module_classes }}" {{ 'data-mh-animation="' ~ animation.type ~ '"' if animation.type }}>
   {{ module.html }}
 </div>
+
+{% set user_styles = [] %}
+  {% do user_styles.append('animation-delay:' ~ animation.delay ~ 'ms') if animation.delay and animation.type %}
+{% set user_styles = user_styles|join(';')|replace(';;', ';') %}
+
 
 {% require_css %}
   <style>
     {% scope_css %}
       .rt {
-        
+        {{ user_styles }}
       }
     {% end_scope_css %}
   </style>

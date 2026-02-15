@@ -10,6 +10,9 @@
     <title>{{ content.html_title }}</title>
     <meta name="description" content="{{ content.meta_description }}">
     {{ standard_header_includes }}
+
+    {{ require_js(get_asset_url('../../js/mh-animations.js'), 'footer') }}
+
   </head>
   <body>
 
