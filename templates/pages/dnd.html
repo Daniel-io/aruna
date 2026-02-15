@@ -10,6 +10,6 @@
 
 {% block body %} 
 
-  <p>Testing 1<p>
-
+  {% module "rich_text" path="../../modules/rich-text.module" label="Rich Text (Simple)" html="<h2>Testing from template</h2>" %}
+    
 {% endblock body %}
