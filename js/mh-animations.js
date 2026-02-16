@@ -1,17 +1,20 @@
-"use strict";
-
 (function () {
 
+  
+  // Elements to watch
   const mhAnimations = document.querySelectorAll('[data-mh-animation]');
 
+  // Remove 'no-js' class if present, because JavaScript is running
   if (document.documentElement.classList.contains('no-js')) {
     document.documentElement.classList.remove('no-js');
   }
 
+  // Add 'js' class to <html> so CSS can apply JavaScript-specific styles
   if (!document.documentElement.classList.contains('js')) {
     document.documentElement.classList.add('js');
   }
 
+  // Feature detection
   if ('IntersectionObserver' in window) {
 
     // animation observer options
