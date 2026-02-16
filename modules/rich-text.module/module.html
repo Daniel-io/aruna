@@ -9,10 +9,11 @@
 
 {# module class list #}
 {% set module_classes = ['rt', 'widget-type-rich_text'] %} 
-  {% do module.classes.append(module.settings.custom_classes) if module.settings.custom_classes %}
+  {% do module_classes.append('relative') if visibility.z_index %}
+  {% do module_classes.append(module.settings.custom_classes) if module.settings.custom_classes %}
   {% do module_classes.append( 'hide--mobile' ) if visibility.hidden_mobile %}
   {% do module_classes.append( 'hide--tablet' ) if visibility.hidden_tablet %}
-  {% do module_classes.append( 'hide--desktop' ) if visibility.hidden_desktop %}
+  {% do module_classes.append( 'hide--desktop') if visibility.hidden_desktop %}
 {% set module_classes = module_classes|join(' ') %}
 
 {# markup #}
@@ -23,6 +24,7 @@
 {% set user_styles = [] %}
   {% do user_styles.append('animation-delay:' ~ animation.delay ~ 'ms') if animation.delay and animation.type %}
   {% do user_styles.append(layout.spacing.css) if layout.spacing.css %}
+  {% do user_styles.append('z-index:' ~ visibility.z_index)  if visibility.z_index %}
 {% set user_styles = user_styles|join(';')|replace(';;', ';') %}
 
 

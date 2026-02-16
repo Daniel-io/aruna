@@ -2,7 +2,9 @@
 {% unless macros %}{% import './_macros.css' %}{% endunless %}
 
 
-
+.relative {
+  position: relative;
+}
 
 
 {# display rules #}
