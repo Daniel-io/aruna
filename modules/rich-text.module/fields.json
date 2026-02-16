@@ -1,5 +1,4 @@
-[ 
-  {
+[ {
   "id" : "html",
   "name" : "html",
   "label" : "Rich text content",
@@ -104,33 +103,156 @@
   "group_occurrence_meta" : null,
   "type" : "group",
   "display_width" : null
-  },{
-    "id": "styles",
-    "name": "styles",
-    "label": "Styles",
-    "required": false,
-    "locked": false,
-    "children": [
-      {
-        "id" : "styles.font_size",
-        "name" : "font_size",
-        "label" : "Font size",
-        "required" : false,
-        "locked" : false,
-        "display" : "select",
-        "placeholder" : "Default",
-        "choices" : [ [ "p-sm", "Small" ], [ "p-lg", "Large" ] ],
-        "multiple" : false,
-        "reordering_enabled" : true,
-        "preset" : null,
-        "type" : "choice",
-        "display_width" : null
-      }
-    ],
-    "tab": "STYLE",
-    "expanded": false,
-    "group_occurrence_meta": null,
-    "type": "group",
-    "display_width": null
-  }
-]
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.font_size",
+    "name" : "font_size",
+    "label" : "Font size",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "placeholder" : "Default",
+    "choices" : [ [ "p-sm", "Small" ], [ "p-lg", "Large" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null
+  }, {
+    "id" : "styles.max_width",
+    "name" : "max_width",
+    "label" : "Max width",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "placeholder" : "Default",
+    "min" : 100,
+    "step" : 1,
+    "suffix" : "px",
+    "type" : "number",
+    "display_width" : null
+  }, {
+    "id" : "styles.layout",
+    "name" : "layout",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.layout.spacing",
+      "name" : "spacing",
+      "label" : "",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  }, {
+    "id" : "styles.text_alignment",
+    "name" : "text_alignment",
+    "label" : "Text alignment",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.text_alignment.default",
+      "name" : "default",
+      "label" : "Default text alignment",
+      "required" : false,
+      "locked" : false,
+      "type" : "textalignment",
+      "display_width" : null,
+      "default" : { }
+    }, {
+      "id" : "styles.text_alignment.tablet",
+      "name" : "tablet",
+      "label" : "Tablet text alignment",
+      "required" : false,
+      "locked" : false,
+      "type" : "textalignment",
+      "display_width" : null,
+      "default" : { }
+    }, {
+      "id" : "styles.text_alignment.desktop",
+      "name" : "desktop",
+      "label" : "Desktop text alignment",
+      "required" : false,
+      "locked" : false,
+      "type" : "textalignment",
+      "display_width" : null,
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  }, {
+    "id" : "styles.visibility",
+    "name" : "visibility",
+    "label" : "Visibility",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.visibility.z_index",
+      "name" : "z_index",
+      "label" : "Z Index",
+      "help_text" : "Can be negative to push it to the back or positive to bring it to the front.",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null
+    }, {
+      "id" : "styles.visibility.hidden_mobile",
+      "name" : "hidden_mobile",
+      "label" : "Hide Mobile?",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "styles.visibility.hidden_tablet",
+      "name" : "hidden_tablet",
+      "label" : "Hide Tablet?",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "styles.visibility.hidden_desktop",
+      "name" : "hidden_desktop",
+      "label" : "Hide Desktop?",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null
+} ]
