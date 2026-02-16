@@ -1,0 +1,41 @@
+<!-- module html  -->
+
+<div style="margin-bottom: 4000px">Below</div>
+<div class="box" style="background-color: red; height: 300px">
+  Testing Box
+</div>
+
+<style>
+
+body {
+  height: 5000px;
+}
+
+</style>
+
+
+
+{% require_js %}
+
+<script>
+
+  const box = document.querySelector(".box");
+
+  const options = {
+    root: null,
+    rootMargin: '0px 0px -20% 0px',
+    threshold: 0.1
+  }
+
+  const observer = new IntersectionObserver(handleIntersect, options);
+
+  function handleIntersect(entries){
+    console.log(entries[0].target);
+    console.log("INTERSECTED !!");
+  }
+
+
+  observer.observe(box);
+</script>
+
+{% end_require_js %}
