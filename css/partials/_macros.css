@@ -1,0 +1,35 @@
+{% set macros = true %}
+
+{# ToC
+# media queries
+#}
+
+
+
+
+
+{#############################################################################
+ # MEDIA QUERIES 
+ # Macros & Variables
+ # e.g. `@media {{ mq+(tablet) }}` outputs `@media (min-width: 37.5em )`
+ ############################################################################}
+
+
+
+{% set mq_retina = '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)' %}
+
+{% macro mq_up( device ) %}
+  (min-width: {{ device }} )
+{% endmacro %}
+  
+{% macro mq_down( device ) %}
+  (max-width: {{ device }} )
+{% endmacro %}
+  
+{% macro mq( device, device_up ) %}
+  (min-width: {{ device }} ) and (max-width: {{ device_up }} )
+{% endmacro %}
+
+
+
+

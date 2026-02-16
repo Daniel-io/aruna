@@ -1,0 +1,24 @@
+{% set settings = true %}
+{% unless macros %}{% import './_macros.css' %}{% endunless %}
+
+{#########################################################
+ # Variables
+ #
+ # NOTE: use semantic variables below.
+ #
+ # Find the most consistently used font styles,
+ # colors, and container widths for your site
+ # and assign them to the jinja variables below
+ # for easy use and reference.
+ #########################################################}
+
+
+ {# BREAKPOINTS #}
+{% set phone_large = '22.5em' %} {# 360px #}
+{% set tablet = '37.5em' %} {# 600px #}
+{% set tablet_large = '56.25em' %} {# 900px #}
+{% set desktop = '68.75em' %} {# 1100px #}
+{% set desktop_large = '112.5em' %} {# 1800px #}
+{% set desktop_larger = '150em' %} {# 2400px #}
+{# {% set header_break = theme.header.breakpoint + 1 ~ 'px' %} #}
+

@@ -4,17 +4,20 @@
 {% set animation = module.animation  %}
 {% set styles = module.styles %}
 {% set layout = styles.layout %}
+{% set visibility = styles.visibility %}
 {% set module_id = 'rt' ~ name|replace('module_','')|replace('widget_','') %}
 
 {# module class list #}
 {% set module_classes = ['rt', 'widget-type-rich_text'] %} 
   {% do module.classes.append(module.settings.custom_classes) if module.settings.custom_classes %}
+  {% do module_classes.append( 'hide--mobile' ) if visibility.hidden_mobile %}
+  {% do module_classes.append( 'hide--tablet' ) if visibility.hidden_tablet %}
+  {% do module_classes.append( 'hide--desktop' ) if visibility.hidden_desktop %}
 {% set module_classes = module_classes|join(' ') %}
 
 {# markup #}
 <div id="{{ module_id }}" class="{{ module_classes }}" {{ 'data-mh-animation="' ~ animation.type ~ '"' if animation.type }}>
   {{ module.html }}
-  {{ layout.spacing.css }}
 </div>
 
 {% set user_styles = [] %}

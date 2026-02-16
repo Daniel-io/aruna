@@ -1,0 +1,33 @@
+{% unless settings %}{% import './_variables.css' %}{% endunless %}
+{% unless macros %}{% import './_macros.css' %}{% endunless %}
+
+
+
+
+
+{# display rules #}
+
+.hide,
+.no-js .hide--no-js {
+  display: none !important;
+}
+
+
+@media {{ mq_down(tablet) }} {
+  .hide-phone,
+  .hide--mobile {
+    display: none;
+  }
+}
+
+@media {{ mq( tablet, desktop ) }} {
+  .hide--tablet {
+    display: none !important
+  }
+}
+
+@media {{ mq_up( desktop )}} {
+  .hide--desktop {
+    display: none !important
+  }
+}
