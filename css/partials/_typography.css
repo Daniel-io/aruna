@@ -1,0 +1,27 @@
+
+{% unless settings %}{% import './_variables.css' %}{% endunless %}
+{% unless macros %}{% import './_macros.css' %}{% endunless %}
+
+
+
+/* ==========================================================================
+Typography
+========================================================================== */
+
+
+
+/* Paragraphs */
+
+p, .paragraph, .widget-type-rich-text li, .rt li {
+  max-width: var(--p-max-width, 275ch); /* improve readability */
+  text-wrap: pretty; /* prevent orphans in supported browsers */
+}
+
+
+.p-sm {
+  font-size: var(--body-font-size-sm);
+}
+
+.p-lg {
+  font-size: var(--body-font-size-lg);
+}

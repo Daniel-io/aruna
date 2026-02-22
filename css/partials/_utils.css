@@ -1,0 +1,158 @@
+/* ==========================================================================
+Utilities
+========================================================================== */
+
+
+
+
+
+
+
+/* text alignment */
+.text-left {
+  text-align:left;
+}
+
+.text-center {
+  text-align:center;
+}
+
+.text-center p, 
+.text-center .paragraph {
+  margin-inline: auto; /* fix for max width in _typography.css */
+}
+
+.text-right {
+  text-align:right;
+}
+
+.text-right p, 
+.text-right .paragraph {
+  margin-inline: auto 0; /* fix for max width in _typography.css */
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-justify p, 
+.text-justify .paragraph {
+  margin-inline: auto; /* fix for max width in _typography.css */
+}
+
+@media (max-width: 767px) {
+  .text-left--mobile {
+    text-align:left;
+  }
+
+  .text-right--mobile p, 
+  .text-right--mobile .paragraph {
+    margin-inline: 0 auto; /* fix for max width in _typography.css */
+  }
+  
+  .text-center--mobile {
+    text-align:center;
+  }
+
+  .text-center--mobile p, 
+  .text-center--mobile .paragraph {
+    margin-inline: auto; /* fix for max width in _typography.css */
+  }
+  
+  .text-right--mobile {
+    text-align:right;
+  }
+
+  .text-right--mobile p, 
+  .text-right--mobile .paragraph {
+    margin-inline: auto 0; /* fix for max width in _typography.css */
+  }
+
+  .text-justify--mobile {
+    text-align: justify;
+  }
+
+  .text-justify--mobile p, 
+  .text-justify--mobile .paragraph {
+    margin-inline: auto; /* fix for max width in _typography.css */
+  }
+
+}
+
+@media (min-width: 768px) and (max-width:1024px) {
+  .text-left--tablet {
+    text-align:left;
+  }
+
+  .text-right--tablet p, 
+  .text-right--tablet .paragraph {
+    margin-inline: 0 auto; /* fix for max width in _typography.css */
+  }
+  
+  .text-center--tablet {
+    text-align:center;
+  }
+
+  .text-center--tablet p, 
+  .text-center--tablet .paragraph {
+    margin-inline: auto; /* fix for max width in _typography.css */
+  }
+  
+  .text-right--tablet {
+    text-align:right;
+  }
+
+  .text-right--tablet p, 
+  .text-right--tablet .paragraph {
+    margin-inline: auto 0; /* fix for max width in _typography.css */
+  }
+
+  .text-justify--tablet {
+    text-align: justify;
+  }
+
+  .text-justify--tablet p, 
+  .text-justify--tablet .paragraph {
+    margin-inline: auto; /* fix for max width in _typography.css */
+  }
+
+}
+
+@media (min-width: 1025px) {
+  .text-left--desktop {
+    text-align:left;
+  }
+
+  .text-right--desktop p, 
+  .text-right--desktop .paragraph {
+    margin-inline: 0 auto; /* fix for max width in _typography.css */
+  }
+  
+  .text-center--desktop {
+    text-align:center;
+  }
+
+  .text-center--desktop p, 
+  .text-center--desktop .paragraph {
+    margin-inline: auto; /* fix for max width in _typography.css */
+  }
+  
+  .text-right--desktop {
+    text-align:right;
+  }
+
+  .text-right--desktop p, 
+  .text-right--desktop .paragraph {
+    margin-inline: auto 0; /* fix for max width in _typography.css */
+  }
+
+  .text-justify--desktop {
+    text-align: justify;
+  }
+
+  .text-justify--desktop p, 
+  .text-justify--desktop .paragraph {
+    margin-inline: auto; /* fix for max width in _typography.css */
+  }
+
+}

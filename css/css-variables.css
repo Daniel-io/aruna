@@ -1,0 +1,17 @@
+{# naming convention: --component-attribute-state
+ #
+ # good: --btn-font-family, --btn-font-family-hover, --btn-font-family-active
+ # bad: --btn-hover-font-family, --active-btn-font-family
+ #}
+
+
+
+:root {
+
+  
+   {# typography #}
+   --body-font-size-sm: 10px;
+   --body-font-size-lg: 20px
+
+
+}

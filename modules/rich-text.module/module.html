@@ -3,6 +3,7 @@
 {# shorthand vars #}
 {% set animation = module.animation  %}
 {% set styles = module.styles %}
+{% set ta = styles.text_alignment %}
 {% set layout = styles.layout %}
 {% set visibility = styles.visibility %}
 {% set module_id = 'rt' ~ name|replace('module_','')|replace('widget_','') %}
@@ -10,11 +11,20 @@
 {# module class list #}
 {% set module_classes = ['rt', 'widget-type-rich_text'] %} 
   {% do module_classes.append('relative') if visibility.z_index %}
+  {% do module_classes.append(styles.font_size) if styles.font_size%}
   {% do module_classes.append(module.settings.custom_classes) if module.settings.custom_classes %}
+  {% do module_classes.append('text-{{ta.default.text_align|lower}}') if ta.default.text_align %}
+  {% do module_classes.append('text-{{ta.tablet.text_align|lower}}--tablet') if ta.tablet.text_align %}
+  {% do module_classes.append('text-{{ta.desktop.text_align|lower}}--desktop') if ta.desktop.text_align %}
   {% do module_classes.append( 'hide--mobile' ) if visibility.hidden_mobile %}
   {% do module_classes.append( 'hide--tablet' ) if visibility.hidden_tablet %}
   {% do module_classes.append( 'hide--desktop') if visibility.hidden_desktop %}
 {% set module_classes = module_classes|join(' ') %}
+
+<pre>
+<p>DEBUG</P>
+ {{ styles.visibility }}
+</pre>
 
 {# markup #}
 <div id="{{ module_id }}" class="{{ module_classes }}" {{ 'data-mh-animation="' ~ animation.type ~ '"' if animation.type }}>
@@ -22,6 +32,7 @@
 </div>
 
 {% set user_styles = [] %}
+  {%- do user_styles.append( '--p-max-width:' ~ styles.max_width ~ 'px' ) if styles.max_width -%}
   {% do user_styles.append('animation-delay:' ~ animation.delay ~ 'ms') if animation.delay and animation.type %}
   {% do user_styles.append(layout.spacing.css) if layout.spacing.css %}
   {% do user_styles.append('z-index:' ~ visibility.z_index)  if visibility.z_index %}
@@ -37,3 +48,7 @@
     {% end_scope_css %}
   </style>
 {% end_require_css %}
+
+
+
+

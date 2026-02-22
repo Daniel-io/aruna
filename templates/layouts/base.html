@@ -14,6 +14,19 @@
     {{ require_css(get_asset_url('../../css/styles.css')) }}
     {{ require_js(get_asset_url('../../js/mh-animations.js'), 'footer') }}
 
+        {# theme asset files #}
+    {%- if is_in_editor -%}
+      {# prevents reload in theme editor #}
+      {{ require_css(get_asset_url('../../css/css-variables.css')) }}
+    {%- else -%}
+      {# load inline everywhere else #}
+      {%- require_css 'css_vars' -%}
+        <style>
+          {% include '../../css/css-variables.css' %}
+        </style>
+      {%- end_require_css -%}
+    {%- endif -%}
+    
   </head>
   <body>
 
